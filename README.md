@@ -12,3 +12,17 @@ The general dots for my Arch install, as well as the important configs I've incl
 * Syntastic
 * Vim-CSS-Color
 * Vim-multiple-cursors
+
+## Bin
+The bluetooth scripts found within the bin folder make use of bluetoothctl and awk and thus require both.
+
+## Software List
+* Terminal(s): Kitty, Urxvt-256bit Color
+* Browser(s): Firefox, Qutebrowser
+* Office: LibreOffice
+* Text Editor(s): DOOM Emacs, Vim, Codium
+* File Manager(s): Vifm, PCManFM
+* Music Player(s): DeaDBeeF, Spotify (spicetify), MOCP (pulse)
+* Media Player: VLC
+* System Monitor: HTOP
+* Document Viewer: Zathura
