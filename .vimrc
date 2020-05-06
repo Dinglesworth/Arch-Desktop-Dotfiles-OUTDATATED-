@@ -1,4 +1,4 @@
-" Dinglesworth's magnificent minimal VIm config!
+" Dinglesworth's magnificent minimal VIM config!
 
 "Adding full colours to vim 
 if (empty($TMUX))
@@ -57,6 +57,7 @@ noremap , :
 
 let g:user_emmet_leader_key='<C-X>'
 
+" Change the vertical split seperator
 set fillchars+=vert:█
 
 " AIRLINE Settings
