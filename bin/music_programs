@@ -1,8 +1,0 @@
-#!/bin/bash
-
-MENU="$(rofi -sep "|" -dmenu -i -p 'Music App' -width 8 -hide-scrollbar -linepadding 4 -padding 20 -lines 3 <<< "Spotify| SPOTUI| DeaDBeeF")"
-	case "$MENU" in
-		*Spotify) spotify;;
-		*SPOTUI) kitty -e /home/$USER/.bin/spotui;;
-		*DeaDBeeF) deadbeef;;
-	esac
