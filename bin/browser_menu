@@ -1,9 +1,0 @@
-#!/bin/bash
-
-MENU="$(rofi -sep "|" -dmenu -i -p "Browser" -width 8 -hide-scrollbar -line-padding 4 -padding 20 -lines 3 <<< "Firefox| Surf Browser| Firefox (Private)")"
-	case "$MENU" in
-		*Firefox) firefox;;
-		*"Surf Browser") surf duckduckgo.com;;
-		*"Firefox (Private)") firefox --private-window
-	esac
-
