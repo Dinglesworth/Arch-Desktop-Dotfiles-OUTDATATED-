@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sleep 0.2; \
+SCREENSHOT_NAME="screeshot-$(date +%F-%T).png"
+scrot /home/dingle/Screenshots/screenshot-$(date +%F-%T).png
+notify-send " Screenshot Taken"$'\n' "Saved as $SCREENSHOT_NAME" 

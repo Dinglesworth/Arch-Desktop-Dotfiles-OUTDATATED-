@@ -1,0 +1,184 @@
+/*-*- mode: css; -*-*/
+
+/*
+ * Flat Nordic ROFI Theme 
+ * Author: Dingle 
+*/
+
+* {
+    selected-normal-foreground:  rgba ( 245, 245, 245, 100 % );
+    normal-foreground:           rgba (255, 255, 255, 100 %);
+    selected-urgent-foreground:  rgba ( 245, 245, 245, 100 % );
+    urgent-foreground:           rgba ( 215, 95, 0, 100 % );
+    active-foreground:           rgba ( 0, 95, 135, 100 % );
+    selected-active-foreground:  rgba ( 245, 245, 245, 100 % );
+    background:                  rgba ( 46, 52, 64, 90 % );
+    bordercolor:                 rgba ( 68, 68, 68, 100 % );
+    normal-background:           rgba ( 46, 52, 64, 0 %);
+	selected-normal-background:  rgba ( 84, 110, 122, 100 % );
+    border-color:                rgba ( 84, 110, 122, 100 % );
+    spacing:                     2;
+    urgent-background:           rgba ( 245, 245, 245, 100 % );
+    selected-urgent-background:  rgba ( 215, 95, 0, 100 % );
+    background-color:            rgba ( 46, 52, 64, 0 %);
+    active-background:           rgba ( 245, 245, 245, 0 % );
+    selected-active-background:  rgba ( 163, 190, 140, 100 % );
+}
+
+#window {
+    background-color: @background;
+    border:           3;
+    border-radius:	  11; 
+    padding:          5;
+}
+
+#mainbox {
+    border:  0;
+    padding: 0;
+	background-color: @normal-background ;
+}
+
+#message {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+
+#textbox {
+    text-color: @normal-foreground;
+	background-color: @normal-background;
+}
+
+#listview {
+    fixed-height: 0;
+    spacing:      2px ;
+    scrollbar:    false ;
+    padding:      2px 0px 0px ;
+	background-color: @normal-background ;
+}
+
+#element {
+    border:  0 ;
+    padding: 5px ;
+	background-color: @normal-background ; 
+}
+
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+	border: 2px;
+	border-color: #546e7a;
+	border-radius: 5px;
+}
+
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+}
+
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+	border: 2px;
+	border-color: @selected-active-background;
+	border-radius: 5px;
+}
+
+#element.alternate.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+#element-icon {
+	size: 24px;
+}
+
+#mode-switcher {
+    border: 2px;
+    border-color: #546e7a;
+	border-radius: 5px;
+	margin: 4 0 0 0;
+	text-color: @normal-foreground;
+}
+
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @normal-foreground; 
+}
+
+#button {
+	background-color: @normal-background;
+	text-color: #81A1C1;
+}
+
+#inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    0;
+	border: 0 0 2 0;
+	border-color: #546e7a;
+}
+
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+#entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+#prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry ];
+}
+
+prompt,
+textbox-prompt-colon,
+entry,
+inputbar{
+	background-color: @normal-background;
+}
+
+prompt,
+textbox-prompt-colon{
+	text-color: #81A1C1;
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    /*text-color: @normal-foreground;*/
+}
+
+/* vim:ft=css

@@ -1,0 +1,176 @@
+# Open a new instance of urxvt
+super + Return
+	kitty	
+
+# Restart sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Open sxhkd config
+super + shift + F1
+	kitty -e vim /home/$USER/.config/sxhkd/sxhkdrc
+
+# Open the bspwm config 
+super + shift + F2
+	kitty -e vim /home/$USER/.config/bspwm/bspwmrc
+
+# Open the polybar config
+super + shift + F3
+	kitty -e vim /home/$USER/.config/polybar/config
+
+# Open the picom config
+super + shift + F4
+	kitty -e vim /home/$USER/.config/picom.conf
+
+# Open the urxvt config
+super + shift + F5 
+	kitty -e vim /home/$USER/.Xresources
+
+### WINDOW MANAGER SPECIFIC ###
+
+# Restart bspwm
+super + shift + F6
+	bspc wm -r
+
+# Quit bspwm
+super + shift + q
+	bspc quit
+
+# Close window 
+super + q
+	bspc node -c
+
+# Kill window
+super + alt + q 
+	bspc node -k 
+
+# Switch desktop up or down one
+super + ctrl + {Left,Right}
+	bspc desktop -f {prev,next}.local
+
+# "Pins" window all desktops
+super + p
+	  bspc node --flag sticky
+
+ctrl + super + {b,n,a}
+	 bspc node -l {below,normal,above}
+
+# Focus window in specific direction
+super + {_,shift + } {h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Focus the next node in the desktop
+super +  {_,shift +}n
+	bspc node -f {next,prev}.local
+
+# Change the tiling mode of the focused window
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Grow the focused window in one direction
+ctrl + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Grow the focused window in one direction
+ctrl + alt + super +{h,j,k,l}
+	bspc node -z {left -60 0,bottom 0 60,top 0 -60,right 60 0}
+
+# Contract the focused window in one direction 
+ctrl + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Contract the focused window in one direction 
+ctrl + alt + shift + super +{h,j,k,l}
+	bspc node -z {right -60 0,top 0 60,bottom 0 -60,left 60 0}
+
+# Move the focused floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0, 0 20, 0 -20,20 0}
+
+# Move the focused floating window
+super + alt + {Left,Down,Up,Right}
+	bspc node -v {-40 0, 0 40, 0 -40,40 0}
+
+# Move the focused floating window
+super + alt + ctrl + {Left,Down,Up,Right}
+	bspc node -v {-60 0, 0 60, 0 -60,60 0}
+
+# Focus or move window to desktop x
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f, node -d} focused:'^{1-9,10}'
+
+### ROFI SPECIFIC ###
+
+# Open standard rofi menu 
+super + d
+	/home/dingle/.config/polybar/scripts/launcher-alt
+
+# Open sidebar 
+super + shift + d 
+	/home/dingle/.config/polybar/scripts/launcher
+
+# Open powermenu
+super + ctrl + p
+	/home/dingle/.config/polybar/scripts/powermenu-alt 
+
+### Media Specific ###
+
+# Skip track or previous
+{XF86AudioPrev,XF86AudioNext}
+	playerctl {previous,next}
+
+# Toggle playback of track
+XF86AudioPlay
+	playerctl play-pause
+
+# Increase the volume
+XF86AudioRaiseVolume
+	/home/$USER/.bin/pulseaudio-scripts/volume_up	
+
+# Lower the volume 
+XF86AudioLowerVolume
+	/home/$USER/.bin/pulseaudio-scripts/volume_down	
+
+### Misc ###
+
+super + alt + l
+	dm-tool lock
+
+XF86AudioMute	
+	/home/$USER/.bin/pulseaudio-scripts/mute
+
+ctrl + XF86AudioPlay 
+	sleep 0.2; \
+	scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t  image/png < $f'
+	notify-send "Summary line 1"$'\n'"Summary line 2" "Body"
+
+
+ctrl + shift + XF86AudioPlay 
+	sleep 0.2; \
+	scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t  image/png < $f'
+	notify-send "  Screenshot Taken"$'\n' "Saved to ..."
+
+### Application specific
+ctrl + alt + b 
+	qutebrowser
+
+ctrl + alt + e
+	/home/$USER/.bin/editor_launcher
+
+ctrl + alt + v
+	pavucontrol
+
+ctrl + alt + s
+	kitty -e htop
+
+ctrl + alt + f 
+	kitty -e /home/dingle/.bin/vifmrun
+
+ctrl + alt + m
+	/home/$USER/.bin/music_launcher
+
+ctrl + alt + c
+	/home/$USER/.bin/configs_launcher
+
+ctrl + alt + o
+	 /home/$USER/.bin/office_launcher

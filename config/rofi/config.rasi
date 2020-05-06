@@ -1,0 +1,35 @@
+configuration {
+	modi: "combi,drun,windowcd,run";
+	width: 40;
+	lines: 12;
+	columns: 2;
+	font: "UbuntuCondensed 12";
+	bw: 0;
+	location: 0;
+	padding: 0;
+	fixed-num-lines: true;
+	show-icons: false;
+	terminal: "kitty";
+	icon-theme:"Papirus-Dark";
+	drun-match-fields: "name,generic,exec,categories";
+	drun-show-actions: false;
+	drun-display-format: "{name}"; 
+	disable-history: false;
+	ignored-prefixes: "";
+	window-format: "{t}";
+/*	case-sensitive: false;*/
+/*	cycle: true;*/
+/*	sidebar-mode: false;*/
+	combi-modi: "window,run";
+	hide-scrollbar: true;
+	theme:"./Themes/nordic_general_menu.rasi";
+	display-window:" ";
+	display-windowcd:" " ;
+	display-run:" ";
+	display-ssh:" ";
+	display-drun:" ";
+	display-combi:" ";
+	display-keys:" ";
+	me-accept-custom: "Control+MouseDPrimary";
+}
+/* vim:ft=css

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+MENU="$(rofi -sep "|" -dmenu -i -p "Configs" -width 6 -hide-scrollbar -line-padding 4 -padding 20 -lines 6 <<< "BSPWM| SXHKD| EMACS| PICOM| POLYBAR| DUNST| ROFI| KITTY| URXVT| VIM| VIFM| SIDEBAR")"
+case "$MENU" in
+	*BSPWM) kitty -e vim /home/$USER/.config/bspwm/bspwmrc;;
+	*SXHKD) kitty -e vim /home/$USER/.config/sxhkd/sxhkdrc;;
+	*EMACS) kitty -e vim /home/$USER/.doom.d;;
+	*PICOM) kitty -e vim /home/$USER/.config/picom.conf;;
+	*POLYBAR) kitty -e vim /home/$USER/.config/polybar;;
+	*DUNST) kitty -e vim /home/$USER/.config/dunst/dunstrc;;
+	*ROFI) kitty -e vim /home/$USER/.config/rofi/config.rasi;;
+	*KITTY) kitty -e vim /home/$USER/.config/kitty/kitty.conf;;
+	*URXVT) kitty -e vim /home/$USER/.Xresources;;
+	*VIM) kitty -e vim /home/$USER/.vimrc;;
+	*VIFM) kitty -e vim /home/$USER/.config/vifm/vifmrc;;
+	*SIDEBAR) kitty -e vim /home/$USER/.config/polybar/scripts/themes/nordic_sidebar.rasi
+esac
+

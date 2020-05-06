@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## Created By Aditya Shakya
+MENU="$(rofi -sep "|" -dmenu -i -p 'System' -width 6 -hide-scrollbar -line-padding 4 -padding 20 -lines 5 <<< "  Lock|  Logout|⏾   Sleep|  Reboot|  Shutdown")"
+            case "$MENU" in
+                *Lock) dm-tool lock;;
+                *Logout) bspc quit;;
+                *Sleep) systemctl suspend;;
+                *Reboot) reboot;;
+                *Shutdown) shutdown now 
+            esac
